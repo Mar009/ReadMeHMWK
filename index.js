@@ -27,6 +27,11 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile("README.md",generateMarkdown(answers), function(err){
+        if (err){
+            throw err;
+        }
+    })
 }
 
 // function to initialize program
