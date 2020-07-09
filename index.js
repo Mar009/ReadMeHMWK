@@ -36,6 +36,9 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
+    inquierer
+    .prompt(questions)
+    .then(answers =>writeToFile)
 
 }
 
