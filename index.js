@@ -27,6 +27,7 @@ const questions = [
 // function to write README file
 function writeToFile(file, data) {
     const markDown= generateMarkdown(data)
+    // ? :  but broken down for practice
     fs.writeFile(file ,markDown, function(err){
         if (err){
             throw err;
