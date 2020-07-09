@@ -1,6 +1,7 @@
 // const
 const generateMarkdown= require("./utils/generateMarkdown.js")
 var inquierer = require("inquirer")
+//the quotes kept messing with me so finally made it just a const
 const file="README.md"
 const fs=require("fs")
 
@@ -18,7 +19,7 @@ const questions = [
     
     {type: "input", message: "What are thet tests?", name: "tests"},
     
-    {type: "input", message: "What are the licenses?", name: "license"},
+    {type: "list", message: "What is the license?", name: "license", choices:["Apache","MIT","GNU GPLv3", "ISC"]},
     
     {type: "input", message: "Where can people contact you for questions?", name: "contact"}
 
@@ -27,7 +28,7 @@ const questions = [
 // function to write README file
 function writeToFile(file, data) {
     const markDown= generateMarkdown(data)
-    // ? :  but broken down for practice
+    
     fs.writeFile(file ,markDown, function(err){
         if (err){
             throw err;

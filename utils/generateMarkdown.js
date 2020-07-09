@@ -1,3 +1,8 @@
+//badges
+function badge(license){ 
+  return `![Badge](https://img.shields.io/badge/License-${license}-blueviolet)`
+}
+
 // function to generate markdown for README
 function generateMarkdown(data) {
   return `
@@ -24,6 +29,7 @@ function generateMarkdown(data) {
 
    ## License
   ${data.license}
+  ${badge(data.license)}
 
    ## Contributors
   ${data.contribution}
