@@ -17,7 +17,7 @@ const questions = [
     
     {type: "input", message: "Who contributed?", name: "contribution"},
     
-    {type: "input", message: "What are thet tests?", name: "tests"},
+    {type: "input", message: "What are the tests?", name: "tests"},
     
     {type: "list", message: "What is the license?", name: "license", choices:["Apache","MIT","GNU GPLv3", "ISC"]},
     
