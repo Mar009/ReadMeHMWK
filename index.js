@@ -1,6 +1,7 @@
 // const
-const generateMarkdown=require("./utils/generateMarkdown")
-const inquierer = require("inquirer")
+const generateMarkdown= require("./utils/generateMarkdown.js")
+var inquierer = require("inquirer")
+const file="README.md"
 const fs=require("fs")
 
 // array of questions for user
@@ -8,8 +9,6 @@ const questions = [
     { type: "input", message: "What's the project title?", name: "title"},
     
     {type: "input", message: "What's the description?", name: "description"},
-    
-    {type: "input", message: "What are the table of contents?", name: "toc"},
     
     {type: "input", message: "What are the install instructions?", name: "install"},
     
@@ -26,8 +25,9 @@ const questions = [
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile("README.md",generateMarkdown(answers), function(err){
+function writeToFile(file, data) {
+    const markDown= generateMarkdown(data)
+    fs.writeFile(file ,markDown, function(err){
         if (err){
             throw err;
         }
@@ -38,9 +38,12 @@ function writeToFile(fileName, data) {
 function init() {
     inquierer
     .prompt(questions)
-    .then(answers =>writeToFile)
-
-}
+    .then(data=>{
+        writeToFile(file,data);
+    })
+ 
+    
+};
 
 // function call to initialize program
 init();

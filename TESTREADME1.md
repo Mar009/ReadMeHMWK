@@ -1,10 +1,8 @@
-// function to generate markdown for README
-function generateMarkdown(data) {
-  return `
-  # Project Title: # ${data.title}
+
+  # Project Title: # ew
 
   ## Description: 
-  ${data.description}
+  just
 
   ## Table of Contents
     *[Installation](#install)
@@ -15,25 +13,21 @@ function generateMarkdown(data) {
     *[Questions](#questions)
 
     ##Installation
-    ${data.install}
+    work
 
     ## Usage
-    ${data.usage}
+    comeone
 
     ## License
-    ${data.license}
+    no
 
     ## Contributors
-    ${data.contribution}
+    now
 
     ## Test
-    ${data.tests}
+    ew
     
     ## Questions
-    ${data.contact}
+    e
 
 
-`;
-}
-
-module.exports = generateMarkdown;
